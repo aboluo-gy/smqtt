@@ -32,7 +32,7 @@ SMQTT基于Netty开发，底层采用Reactor3反应堆模型,支持单机部署�
 
 
 ## 麻烦关注下公众号！
-![image](../icon/icon.jpg)
+![image](icon/icon.jpg)
 
 - 添加微信号`Lemon877164954`，拉入smqtt官方交流群
 - 加入qq群 `700152283` 
