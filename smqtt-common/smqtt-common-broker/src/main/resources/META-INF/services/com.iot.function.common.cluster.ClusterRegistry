@@ -1,1 +1,1 @@
-com.smqtt.function.common.registry.ScubeClusterRegistry
+ io.github.quickmsg.broker.common.registry.ScubeClusterRegistry

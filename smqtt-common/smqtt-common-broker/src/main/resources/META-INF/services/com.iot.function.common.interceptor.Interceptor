@@ -1,1 +1,1 @@
-com.smqtt.function.common.core.inteceptor.ConnectionCounterInterceptor
+ io.github.quickmsg.broker.common.core.inteceptor.ConnectionCounterInterceptor

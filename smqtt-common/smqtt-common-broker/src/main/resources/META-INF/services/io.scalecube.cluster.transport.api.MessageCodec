@@ -1,1 +1,1 @@
-com.smqtt.function.common.registry.JacksonMessageCodec
+io.github.quickmsg.broker.common.registry.JacksonMessageCodec

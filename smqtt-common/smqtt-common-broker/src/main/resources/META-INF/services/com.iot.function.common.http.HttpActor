@@ -1,1 +1,1 @@
-com.smqtt.function.common.core.http.PublishActor
+ io.github.quickmsg.broker.common.core.http.PublishActor
