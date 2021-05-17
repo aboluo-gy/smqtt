@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>io.github.quickmsg</groupId>
+        <artifactId>smqtt</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>smqtt-api-system</module>
+        <module>smqtt-api-file</module>
+    </modules>
+
+    <artifactId>smqtt-api</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        smqtt-api系统接口
+    </description>
+
+</project>

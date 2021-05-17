@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>io.github.quickmsg</groupId>
+        <artifactId>smqtt-common</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>smqtt-common-security</artifactId>
+
+    <description>
+        smqtt-common-security安全模块
+    </description>
+
+    <dependencies>
+
+        <!-- smqtt Api System -->
+        <dependency>
+            <groupId>io.github.quickmsg</groupId>
+            <artifactId>smqtt-api-system</artifactId>
+        </dependency>
+
+        <!-- smqtt Common Redis-->
+        <dependency>
+            <groupId>io.github.quickmsg</groupId>
+            <artifactId>smqtt-common-redis</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

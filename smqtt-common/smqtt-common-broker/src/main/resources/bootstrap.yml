@@ -1,0 +1,40 @@
+# MQTTBroker配置
+smqtt:
+  tcp:
+    # 开启tcp端口
+    port: 1883
+    # smqtt用户
+    username: smqtt
+    # smqtt密码
+    password: smqtt
+    # 高水位
+    lowWaterMark: 4000000
+    # 低水位
+    highWaterMark: 80000000
+    # 开启ssl加密
+    ssl: false
+    # 开启日志
+    wiretap: false
+    # boss线程
+    bossThreadSize: 4
+    # work线程
+    workThreadSize: 8
+  websocket:
+    # websocket端口
+    port: 8999
+    # websocket开启
+    enable: true
+  http:
+    # 开启http
+    enable: true
+    # 开启http端口
+    port: 1999
+    # 开启http日志
+    accesslog: true;
+    # 开启ssl
+    ssl:
+      enable: false
+# 证书crt smqtt.tcp.ssl.crt =
+#      crt:
+# 证书key smqtt.tcp.ssl.key =
+#      key:

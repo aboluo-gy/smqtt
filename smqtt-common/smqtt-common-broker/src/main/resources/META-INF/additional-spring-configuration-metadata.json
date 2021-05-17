@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "smqtt.tcp",
+      "type": "java.lang.String",
+      "description": "Description for smqtt.tcp."
+    },
+    {
+      "name": "smqtt.tcp",
+      "type": "java.lang.String",
+      "description": "Description for smqtt.tcp."
+    }
+  ] }

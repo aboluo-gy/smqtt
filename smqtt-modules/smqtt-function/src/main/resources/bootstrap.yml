@@ -1,0 +1,56 @@
+# Tomcat
+server:
+  port: 9204
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: smqtt-function
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 39.107.90.2:8848
+        #命名空间
+        namespace: feeea58c-8f03-4acc-af44-3f4198f0fecb
+      config:
+        # 配置中心地址
+        server-addr: 39.107.90.2:8848
+        #命名空间
+        namespace: feeea58c-8f03-4acc-af44-3f4198f0fecb
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+# seata配置
+seata:
+  # 默认关闭，如需启用spring.datasource.dynami.seata需要同时开启
+  enabled: false
+  # Seata 应用编号，默认为 ${spring.application.name}
+  application-id: ${spring.application.name}
+  # Seata 事务组编号，用于 TC 集群名
+  tx-service-group: ${spring.application.name}-group
+  # 关闭自动代理
+  enable-auto-data-source-proxy: false
+  # 服务配置项
+  service:
+    # 虚拟组和分组的映射
+    vgroup-mapping:
+      iot-system-group: default
+  config:
+    type: nacos
+    nacos:
+      serverAddr: 39.107.90.2:8848
+      group: DEFAULT_GROUP
+      namespace: feeea58c-8f03-4acc-af44-3f4198f0fecb
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 39.107.90.2:8848
+      namespace: feeea58c-8f03-4acc-af44-3f4198f0fecb

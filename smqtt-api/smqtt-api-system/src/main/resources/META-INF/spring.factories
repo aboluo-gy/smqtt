@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.smqtt.system.api.factory.RemoteUserFallbackFactory,\
+  com.smqtt.system.api.factory.RemoteLogFallbackFactory, \
+  com.smqtt.system.api.factory.RemoteDictDataFallbackFactory

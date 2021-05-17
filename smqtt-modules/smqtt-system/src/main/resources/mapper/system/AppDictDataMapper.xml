@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smqtt.system.mapper.AppDictDataMapper">
+
+    <resultMap type="AppDictData" id="AppDictDataResult">
+        <result property="id"    column="id"    />
+        <result property="dictLabel"    column="dict_label"    />
+        <result property="dictValue"    column="dict_value"    />
+        <result property="dictType"    column="dict_type"    />
+        <result property="prefix"    column="prefix"    />
+        <result property="suffix"    column="suffix"    />
+        <result property="status"    column="status"    />
+        <result property="account"    column="account"    />
+        <result property="createDate"    column="create_date"    />
+        <result property="flag"    column="flag"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectAppDictDataVo">
+        select id, dict_label, dict_value, dict_type, prefix, suffix, status, account, create_date, flag, remark from app_dict_data
+    </sql>
+
+    <select id="selectAppDictDataList" parameterType="AppDictData" resultMap="AppDictDataResult">
+        <include refid="selectAppDictDataVo"/>
+        <where>
+            <if test="dictLabel != null  and dictLabel != ''"> and dict_label = #{dictLabel}</if>
+            <if test="dictValue != null  and dictValue != ''"> and dict_value = #{dictValue}</if>
+            <if test="dictType != null  and dictType != ''"> and dict_type = #{dictType}</if>
+            <if test="prefix != null  and prefix != ''"> and prefix = #{prefix}</if>
+            <if test="suffix != null  and suffix != ''"> and suffix = #{suffix}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="account != null  and account != ''"> and account = #{account}</if>
+            <if test="createDate != null  and createDate != ''"> and create_date = #{createDate}</if>
+            <if test="flag != null "> and flag = #{flag}</if>
+        </where>
+    </select>
+
+    <select id="selectAppDictDataById" parameterType="Long" resultMap="AppDictDataResult">
+        <include refid="selectAppDictDataVo"/>
+        where id = #{id}
+    </select>
+    <select id="selectListByTypeAndStatus" resultMap="AppDictDataResult">
+        <include refid="selectAppDictDataVo"/>
+        where dict_type = #{dictType} and status = #{status}
+    </select>
+
+    <select id="selectOneByAppDictData" resultMap="AppDictDataResult">
+        <include refid="selectAppDictDataVo"/>
+        <where>
+            <if test="dictLabel != null  and dictLabel != ''"> and dict_label = #{dictLabel}</if>
+            <if test="dictValue != null  and dictValue != ''"> and dict_value = #{dictValue}</if>
+            <if test="dictType != null  and dictType != ''"> and dict_type = #{dictType}</if>
+            <if test="prefix != null  and prefix != ''"> and prefix = #{prefix}</if>
+            <if test="suffix != null  and suffix != ''"> and suffix = #{suffix}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="account != null  and account != ''"> and account = #{account}</if>
+            <if test="createDate != null  and createDate != ''"> and create_date = #{createDate}</if>
+            <if test="flag != null "> and flag = #{flag}</if>
+        </where>
+    </select>
+
+    <insert id="insertAppDictData" parameterType="AppDictData" useGeneratedKeys="true" keyProperty="id">
+        insert into app_dict_data
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="dictLabel != null">dict_label,</if>
+            <if test="dictValue != null">dict_value,</if>
+            <if test="dictType != null">dict_type,</if>
+            <if test="prefix != null">prefix,</if>
+            <if test="suffix != null">suffix,</if>
+            <if test="status != null">status,</if>
+            <if test="account != null">account,</if>
+            <if test="createDate != null">create_date,</if>
+            <if test="flag != null">flag,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="dictLabel != null">#{dictLabel},</if>
+            <if test="dictValue != null">#{dictValue},</if>
+            <if test="dictType != null">#{dictType},</if>
+            <if test="prefix != null">#{prefix},</if>
+            <if test="suffix != null">#{suffix},</if>
+            <if test="status != null">#{status},</if>
+            <if test="account != null">#{account},</if>
+            <if test="createDate != null">#{createDate},</if>
+            <if test="flag != null">#{flag},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAppDictData" parameterType="AppDictData">
+        update app_dict_data
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="dictLabel != null">dict_label = #{dictLabel},</if>
+            <if test="dictValue != null">dict_value = #{dictValue},</if>
+            <if test="dictType != null">dict_type = #{dictType},</if>
+            <if test="prefix != null">prefix = #{prefix},</if>
+            <if test="suffix != null">suffix = #{suffix},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="account != null">account = #{account},</if>
+            <if test="createDate != null">create_date = #{createDate},</if>
+            <if test="flag != null">flag = #{flag},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAppDictDataById" parameterType="Long">
+        delete from app_dict_data where id = #{id}
+    </delete>
+
+    <delete id="deleteAppDictDataByIds" parameterType="String">
+        delete from app_dict_data where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

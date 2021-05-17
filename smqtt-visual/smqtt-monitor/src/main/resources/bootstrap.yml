@@ -1,0 +1,29 @@
+# Tomcat
+server:
+  port: 9100
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: smqtt-monitor
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 39.107.90.2:8848
+        #命名空间
+        namespace: feeea58c-8f03-4acc-af44-3f4198f0fecb
+      config:
+        # 配置中心地址
+        server-addr: 39.107.90.2:8848
+        #命名空间
+        namespace: feeea58c-8f03-4acc-af44-3f4198f0fecb
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
