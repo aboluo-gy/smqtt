@@ -3,7 +3,7 @@
 
 SMQTT基于Netty开发，底层采用Reactor3反应堆模型,支持单机部署，支持容器化部署，具备低延迟，高吞吐量，支持百万TCP连接，同时支持多种协议交互，是一款非常优秀的消息中间件！
 
-* 采用前后端分离的模式，微服务版本前端( [smqtt-Vue])。
+* 采用前后端分离的模式，微服务版本前端( [smqtt-Vue]：https://github.com/quickmsg/smqtt-ui)。
 * 后端采用Spring Boot、Spring Cloud & Alibaba。
 * 注册中心、配置中心选型Nacos，权限认证使用Redis。
 * 流量控制框架选型Sentinel。
