@@ -93,6 +93,10 @@
                                     <tag>latest</tag>
                                     <tag>${project.version}</tag>
                                 </tags>
+                                <auth>
+                                    <username>${registry_username}</username>
+                                    <password>${registry_password}</password>
+                                </auth>
                             </to>
                             <container>
                                 <!--容器相关的属性-->
